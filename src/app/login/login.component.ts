@@ -29,12 +29,17 @@ export class LoginComponent implements OnInit {
       alert("Please enter all the Fields")
     }
 
+    else if(this.checkCust.controls.username.value == "admin" || this.checkCust.controls.password.value == "admin"){
+      alert("Welcome Admin");
+      this.router.navigateByUrl('/admin',{ state: { id:this.checkCust.controls.username.value , status:'LoggedIn' } })
+    }
+
     else{
       this.LoginService.checkCusto(this.checkCust.value).subscribe((Response)=>{
         this.checkResp = Response;
         if (this.checkResp.message == "LoggedIn"){
           alert(this.checkResp.message)
-          this.router.navigate(['dashboard'])
+          this.router.navigateByUrl('/dashboard',{ state: { id:this.checkCust.controls.username.value , status:'LoggedIn' } })
           //this.router.navigate([{path:"login", component:DashboardComponent}])
         }
           else{

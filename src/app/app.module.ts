@@ -11,6 +11,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { AdminuploadComponent } from './adminupload/adminupload.component';
+import { SearchdashboardComponent } from './searchdashboard/searchdashboard.component';
+import { BuyComponent } from './buy/buy.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +22,11 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     LoginComponent,
     HomeComponent,
     RegisterComponent,
-    DashboardComponent
+    DashboardComponent,
+    AdmindashboardComponent,
+    AdminuploadComponent,
+    SearchdashboardComponent,
+    BuyComponent
   ],
   imports: [
     BrowserModule,
